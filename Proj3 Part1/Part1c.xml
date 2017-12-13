@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3"  xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+<NETWORK>
+<NAME>Untitled</NAME>
+<PROPERTY>detailed = </PROPERTY>
+<PROPERTY>short = </PROPERTY>
+
+<VARIABLE TYPE="nature">
+	<NAME>College graduate</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<OBS>T</OBS>
+	<PROPERTY>position = (7571.08154296875, 5803.48779296875)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Employed by current emploer for more than 5 years</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<OBS>T</OBS>
+	<PROPERTY>position = (7810.65771484375, 5534.7939453125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Parents/spouse/children have more than 4 in-progress loan</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<OBS>F</OBS>
+	<PROPERTY>position = (7227.1328125, 5567.791015625)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Annual salary &gt; $60000</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<OBS>T</OBS>
+	<PROPERTY>position = (7329.5458984375, 5755.2666015625)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Annual house income &gt; $100000</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<OBS>T</OBS>
+	<PROPERTY>position = (7764.71484375, 5739.2666015625)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Current debt &lt; $5000</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<OBS>T</OBS>
+	<PROPERTY>position = (7345.27587890625, 5640.98193359375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Credit score &gt; 600</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<OBS>T</OBS>
+	<PROPERTY>position = (7725.57568359375, 5638.98486328125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Should lend money or not</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7549.9150390625, 5574.52099609375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>More than 30 years old</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<OBS>T</OBS>
+	<PROPERTY>position = (7378.1513671875, 5471.53564453125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Have more than 4 in-progress loan</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<OBS>F</OBS>
+	<PROPERTY>position = (7626.8671875, 5476.51171875)</PROPERTY>
+</VARIABLE>
+
+<DEFINITION>
+	<FOR>College graduate</FOR>
+	<TABLE>0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Employed by current emploer for more than 5 years</FOR>
+	<TABLE>0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Parents/spouse/children have more than 4 in-progress loan</FOR>
+	<TABLE>0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Annual salary &gt; $60000</FOR>
+	<GIVEN>College graduate</GIVEN>
+	<TABLE>0.7 0.3 0.2 0.8</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Annual house income &gt; $100000</FOR>
+	<GIVEN>College graduate</GIVEN>
+	<TABLE>0.9 0.1 0.3 0.7</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Current debt &lt; $5000</FOR>
+	<GIVEN>Annual salary &gt; $60000</GIVEN>
+	<GIVEN>Annual house income &gt; $100000</GIVEN>
+	<TABLE>0.8 0.2 0.7 0.3 0.6 0.4 0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Credit score &gt; 600</FOR>
+	<GIVEN>Annual salary &gt; $60000</GIVEN>
+	<GIVEN>Annual house income &gt; $100000</GIVEN>
+	<TABLE>0.8 0.2 0.7 0.3 0.6 0.4 0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Should lend money or not</FOR>
+	<GIVEN>Employed by current emploer for more than 5 years</GIVEN>
+	<GIVEN>Parents/spouse/children have more than 4 in-progress loan</GIVEN>
+	<GIVEN>Current debt &lt; $5000</GIVEN>
+	<GIVEN>Credit score &gt; 600</GIVEN>
+	<GIVEN>More than 30 years old</GIVEN>
+	<GIVEN>Have more than 4 in-progress loan</GIVEN>
+	<TABLE>0.9 0.1 0.9 0.1 0.9 0.1 0.9 0.1 0.7 0.3 0.7 0.3 0.7 0.3 0.7 0.3 0.55 0.45 0.55 0.45 0.55 0.45 0.55 0.45 0.4 0.6 0.4 0.6 0.4 0.6 0.4 0.6 0.85 0.15 0.85 0.15 0.85 0.15 0.85 0.15 0.65 0.35 0.65 0.35 0.65 0.35 0.65 0.35 0.55 0.45 0.55 0.45 0.55 0.45 0.55 0.45 0.35 0.65 0.35 0.65 0.35 0.65 0.35 0.65 0.8 0.2 0.8 0.2 0.8 0.2 0.8 0.2 0.6 0.4 0.6 0.4 0.6 0.4 0.6 0.4 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.35 0.65 0.35 0.65 0.35 0.65 0.35 0.65 0.75 0.25 0.75 0.25 0.75 0.25 0.75 0.25 0.6 0.4 0.6 0.4 0.6 0.4 0.6 0.4 0.45 0.55 0.45 0.55 0.45 0.55 0.45 0.55 0.3 0.7 0.3 0.7 0.3 0.7 0.3 0.7</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>More than 30 years old</FOR>
+	<TABLE>0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Have more than 4 in-progress loan</FOR>
+	<TABLE>0.4 0.6</TABLE>
+</DEFINITION>
+</NETWORK>
+</BIF>
